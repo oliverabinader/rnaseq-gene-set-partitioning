@@ -29,14 +29,13 @@ The pipeline enables:
   - Upregulated genes
   - Downregulated genes
 
----
+- Filtering Criteria:
 
-Filtering Criteria:
-
-By default, the script applies:
-- |log2FoldChange| > 1
-- FDR (padj) < 0.05
-The thresholds can be modified in the script itself
+  By default, the script applies:
+  - |log2FoldChange| > 1
+  - FDR (padj) < 0.05
+  
+  The thresholds can be modified in the script itself
 
 
 ## Input Requirements
