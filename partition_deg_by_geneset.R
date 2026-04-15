@@ -116,3 +116,20 @@ save_split <- function(up, dn, prefix) {
 }
 
 save_split(kur_up, kur_dn, "Kuramochi")
+
+#Note:
+If you just want to split the DE genes into Mito and Background, do the following in the code:
+1. Select only Mito pathways 
+Mito_pathways <- reactome_paths[str_detect(reactome_paths, "MITOCHONDRIAL|MITOCHONDRION")]
+2. When you do this, tweak it a bit: 
+reactome_subset <- reactome_list[Mito_pathways]
+3. When you read in the DEG data, you can add a new col with either Mitochondria or Remaining. In this analysis, you don't really care about splitting DEGs into up and down lists.
+kuramochi_all <- dplyr::kuramochi_all %>% mutate(GeneGroup = ifelse(GeneSymbol %in% all_genes, "Mitochondria", "Background"))
+data_to_save <- kuramochi_all %>% rownames_to_column(var = "GeneID")
+data_to_save <- data_to_save %>% mutate(PValue = as.numeric(PValue), FDR = as.numeric(FDR)) #just to make these columns numeric before writing to output file.
+4. Write the results to an output file
+writexl::write_xlsx(
+  x = data_to_save, 
+  path = "path/Kuramochi_DE_Mitochondria_vs_Remaining.xlsx",
+  col_names = TRUE
+)
