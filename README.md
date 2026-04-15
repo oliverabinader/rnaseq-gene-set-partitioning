@@ -11,7 +11,6 @@ The pipeline enables:
 - Separation of DEGs into biologically meaningful groups
 - Comparison across multiple datasets or cell lines
 
----
 
 ## Analyses Included
 
@@ -29,7 +28,9 @@ The pipeline enables:
 - Supports:
   - Upregulated genes
   - Downregulated genes
- 
+
+---
+
 Filtering Criteria:
 
 By default, the script applies:
@@ -37,7 +38,6 @@ By default, the script applies:
 - FDR (padj) < 0.05
 The thresholds can be modified in the script itself
 
----
 
 ## Input Requirements
 
@@ -51,7 +51,6 @@ The thresholds can be modified in the script itself
 - Standard `.gmt` file (e.g., MSigDB Reactome)
 - OR a simple gene list
 
----
 
 ## Output Files
 
@@ -62,7 +61,6 @@ Output will be saved as Excel files containing:
   
 Each category is saved as a separate sheet.
 
----
 
 ## Notes
 
