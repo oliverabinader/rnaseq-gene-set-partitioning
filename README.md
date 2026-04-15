@@ -1,5 +1,4 @@
 # RNA-seq Gene Set Partitioning and Downstream Analysis
-=======================================================
 
 **Author:** Oliver Abinader  
 
